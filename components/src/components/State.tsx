@@ -21,6 +21,8 @@ const State = () => {
 
     function hdlClick(ev: MouseEvent) {
         setCounter(counter + 1)
+        setCounter((prev) => prev+1)
+        setCounter((prev) => prev+1)
         if (msg.length > 20) setMessage('msg-');
         else setMessage(msg + '-')
     }
