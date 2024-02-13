@@ -7,6 +7,7 @@ import ProfileCard from "./components/ProfileCard.tsx";
 import Events from "./components/Events.tsx";
 import CustomButton from "./components/CustomButton.tsx";
 import Propagacion from "./components/Propagacion.tsx";
+import State from "./components/State.tsx";
 
 function App() {
     //const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
             <Events/>
             <CustomButton hdlClick={(ev:MouseEvent)=>{console.log(`this-custom-button ${ev.nativeEvent}`)}} />
             <Propagacion/>
+            <State/>
         </>
     )
 }
