@@ -1,13 +1,18 @@
 // how to manage state in React example!
-import {useState} from "react";
+import {useState, MouseEvent} from "react";
 
 const State = () => {
-    const state = useState<number>(0)
+    const [counter, setCounter] = useState<number>(0)
+
+    function hdlClick(ev: MouseEvent) {
+        setCounter(counter+1)
+    }
 
     return <div>
         <p>
-            Valor del contador: {state[0]}
+            Valor del contador: {counter}
         </p>
+        <button onClick={hdlClick}>Increment Counter</button>
     </div>
 }
 
