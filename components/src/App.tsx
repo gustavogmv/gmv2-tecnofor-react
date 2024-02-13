@@ -3,6 +3,7 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 import ProfileCard from "./components/ProfileCard.tsx";
+import Events from "./components/Events.tsx";
 
 function App() {
     //const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
             }} buttonText={"DOWNLOAD"}>
                 <p>"my profile description!"</p>
             </ProfileCard>
+            <Events/>
         </>
     )
 }
