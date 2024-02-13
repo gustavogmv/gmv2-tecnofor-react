@@ -4,7 +4,9 @@ import {ChangeEvent, FormEvent, useState} from "react";
 import Employee from "../interfaces/Employee.ts";
 import employee from "../interfaces/Employee.ts";
 
-const Formulario = () => {
+type FormularioProps = { onCreateEmployee: (newEmployee: Employee) => void }
+
+const Formulario = ({onCreateEmployee}: FormularioProps) => {
     const [_employee, setEmployee] = useState<Employee>(employee())
 
     const modifyfield = (ev: ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +19,7 @@ const Formulario = () => {
 
     const handleSubmit = (ev: FormEvent) => {
         ev.preventDefault()
-        console.log(_employee)
+        onCreateEmployee(_employee)
     }
 
     return <div>

@@ -9,6 +9,7 @@ import CustomButton from "./components/CustomButton.tsx";
 import Propagacion from "./components/Propagacion.tsx";
 import State from "./components/State.tsx";
 import Formulario from "./components/Formulario.tsx";
+import Employee from "./interfaces/Employee.ts";
 
 function App() {
     //const [count, setCount] = useState(0)
@@ -28,7 +29,7 @@ function App() {
             <CustomButton hdlClick={(ev:MouseEvent)=>{console.log(`this-custom-button ${ev.nativeEvent}`)}} />
             <Propagacion/>
             <State/>
-            <Formulario/>
+            <Formulario onCreateEmployee={(employee:Employee)=>{console.log(employee)}}/>
         </>
     )
 }
