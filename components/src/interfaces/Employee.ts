@@ -5,3 +5,7 @@ export default interface Employee {
     department: string
     active: boolean
 }
+
+export default function employee() {
+    return {name: "", surname: "", email: "", department: "", active: false}
+}
