@@ -7,8 +7,10 @@ function factorialOf(n: number): number {
 
 const Factorial = () => {
     const [num, setNum] = useState<number>(1)
+    const [cont, setCont] = useState(0)
 
     // no esta en 'useEffect' pq no queremos que dispare renders,...
+    // al a;adir el button, esto se recalcula en cada pulsacion
     const factorial = factorialOf(num)
 
     return <div>
@@ -17,6 +19,7 @@ const Factorial = () => {
         <input type="number" onChange={(e) => {
             setNum(Number(e.target.value))
         }}/>
+        <button onClick={()=>{setCont(cont+1)}}>Increment [{cont}]</button>
     </div>
 }
 
