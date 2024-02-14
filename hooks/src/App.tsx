@@ -5,6 +5,7 @@ import {useState} from "react";
 import Scroll from "./components/Scroll.tsx";
 import PrecioIva from "./components/PrecioIva.tsx";
 import CuentaRender from "./components/CuentaRender.tsx";
+import Factorial from "./components/Factorial.tsx";
 
 function App() {
     // const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
             <Scroll/>
             <PrecioIva precio={22.222}/>
             <CuentaRender/>
+            <Factorial/>
         </>
     )
 }
