@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useMemo, useState} from "react";
 
 function factorialOf(n: number): number {
     console.log('factorialOf!');
@@ -10,8 +10,10 @@ const Factorial = () => {
     const [cont, setCont] = useState(0)
 
     // no esta en 'useEffect' pq no queremos que dispare renders,...
-    // al a;adir el button, esto se recalcula en cada pulsacion
-    const factorial = factorialOf(num)
+    // the 'useMemo' avoid recompute factorial if num does not change!!!
+    const factorial = useMemo(() => {
+        return factorialOf(num)
+    }, [num])
 
     return <div>
         <p>Factorial de {num} = {factorial}</p>
@@ -19,7 +21,10 @@ const Factorial = () => {
         <input type="number" onChange={(e) => {
             setNum(Number(e.target.value))
         }}/>
-        <button onClick={()=>{setCont(cont+1)}}>Increment [{cont}]</button>
+        <button onClick={() => {
+            setCont(cont + 1)
+        }}>Increment [{cont}]
+        </button>
     </div>
 }
 
