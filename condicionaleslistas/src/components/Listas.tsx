@@ -112,13 +112,13 @@ const Listas = () => {
     return <div>
         {items}
         <hr/>
-        {users.map((usr) => {
-            return <div style={{color: "gray", backgroundColor:"lightcyan"}}>
+        {users.map(usr =>
+            <div style={{color: "gray", backgroundColor: "lightcyan"}}>
                 <p>{usr.first_name} {usr.last_name}</p>
-                <p style={{backgroundColor:"cyan"}}>{usr.email}</p>
-                <img src={usr.image} alt="" />
+                <p style={{backgroundColor: "cyan"}}>{usr.email}</p>
+                <img src={usr.image} alt=""/>
             </div>
-        })}
+        )}
     </div>
 }
 
