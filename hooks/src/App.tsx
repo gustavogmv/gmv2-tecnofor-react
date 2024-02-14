@@ -4,6 +4,7 @@ import Intervalo from "./components/Intervalo.tsx";
 import {useState} from "react";
 import Scroll from "./components/Scroll.tsx";
 import PrecioIva from "./components/PrecioIva.tsx";
+import CuentaRender from "./components/CuentaRender.tsx";
 
 function App() {
     // const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
             {showDate && <Intervalo/>}
             <Scroll/>
             <PrecioIva precio={22.222}/>
+            <CuentaRender/>
         </>
     )
 }
