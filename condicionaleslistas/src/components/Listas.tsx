@@ -106,14 +106,14 @@ const users = [
 
 const Listas = () => {
     const items = []
-    for (let user of users) {
-        items.push(<p style={{backgroundColor: "tomato"}}>{user.first_name}</p>)
+    for (const user of users) {
+        items.push(<p key={user._id} style={{backgroundColor: "tomato"}}>{user.first_name}</p>)
     }
     return <div>
         {items}
         <hr/>
         {users.map(usr =>
-            <div style={{color: "gray", backgroundColor: "lightcyan"}}>
+            <div key={usr._id} style={{color: "gray", backgroundColor: "lightcyan"}}>
                 <p>{usr.first_name} {usr.last_name}</p>
                 <p style={{backgroundColor: "cyan"}}>{usr.email}</p>
                 <img src={usr.image} alt=""/>
