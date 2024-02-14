@@ -1,11 +1,17 @@
 // count number of renders
 
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const CuentaRender = () => {
     const [msg, setMsg] = useState('')
     const counter = useRef(0)
     const inputRef = useRef<HTMLInputElement>(null)
+    const prevMsg = useRef(msg)
+
+
+    useEffect(() => {
+        prevMsg.current = msg
+    }, [msg]);
 
     counter.current = counter.current + 1
 
@@ -14,7 +20,7 @@ const CuentaRender = () => {
     }
 
     return <div style={{backgroundColor: "blanchedalmond"}}>
-        <p>{msg}</p>
+        <p>Previous Msg: {prevMsg.current}   Current Msg: {msg}</p>
         <p>{counter.current}</p>
         <input ref={inputRef} type="text" onChange={(e) => {
             setMsg(e.target.value)
