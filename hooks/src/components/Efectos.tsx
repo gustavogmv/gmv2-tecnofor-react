@@ -18,6 +18,10 @@ const Efectos = () => {
         console.log("component is already Rendered!")
     }, [mensaje])
 
+    useEffect(() => {
+        console.log("gets called when clicking button ["+counter+"]")
+    }, [counter]);
+
     return <div>
         <p>Mensaje del componente... {mensaje}</p>
         <input type="text" onChange={(e)=>{setMensaje(e.target.value)}} />
