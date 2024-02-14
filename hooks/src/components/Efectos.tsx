@@ -18,7 +18,10 @@ const Efectos = () => {
          * antes de la funcion del 'useEffect'
          * 4- cuando el componente desaparece , tb se ejcuta la funcion de limpieza
          */
-        console.log("component is already Rendered!")
+        console.log("component is already Rendered=> ",  mensaje)
+        return function cleanup(){
+            console.log('Mensaje', mensaje)
+        }
     }, [mensaje])
 
     useEffect(() => {
