@@ -5,6 +5,9 @@ const Efectos = () => {
     const [mensaje, setMensaje] = useState('')
     const [counter, setCounter] = useState(1)
 
+    useEffect(() => {
+        console.log("--useEffect--only when component starts!")
+    }, []);
     // Execute function after component renders
     useEffect(()=>{
         /**
