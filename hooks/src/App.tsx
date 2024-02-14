@@ -2,17 +2,21 @@ import './App.css'
 import Efectos from "./components/Efectos.tsx";
 import Intervalo from "./components/Intervalo.tsx";
 import {useState} from "react";
+import Scroll from "./components/Scroll.tsx";
 
 function App() {
     // const [count, setCount] = useState(0)
 
     const [showDate, setShowDate] = useState(true)
-
+    const btnmsg = showDate ? 'Hide' : 'Show'
     return (
         <>
-            <button onClick={()=>{setShowDate(!showDate)}}>{showDate} ? 'Hide' : 'Show'</button>
+            <button onClick={() => {
+                setShowDate(!showDate)
+            }}>{btnmsg}</button>
             <Efectos/>
             {showDate && <Intervalo/>}
+            <Scroll/>
         </>
     )
 }
