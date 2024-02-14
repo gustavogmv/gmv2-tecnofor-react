@@ -3,6 +3,7 @@ import Efectos from "./components/Efectos.tsx";
 import Intervalo from "./components/Intervalo.tsx";
 import {useState} from "react";
 import Scroll from "./components/Scroll.tsx";
+import PrecioIva from "./components/PrecioIva.tsx";
 
 function App() {
     // const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
             <Efectos/>
             {showDate && <Intervalo/>}
             <Scroll/>
+            <PrecioIva precio={22.222}/>
         </>
     )
 }
