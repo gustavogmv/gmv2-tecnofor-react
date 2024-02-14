@@ -6,6 +6,7 @@ import Scroll from "./components/Scroll.tsx";
 import PrecioIva from "./components/PrecioIva.tsx";
 import CuentaRender from "./components/CuentaRender.tsx";
 import Factorial from "./components/Factorial.tsx";
+import FiltroAnimales from "./components/FiltroAnimales.tsx";
 
 function App() {
     // const [count, setCount] = useState(0)
@@ -23,6 +24,7 @@ function App() {
             <PrecioIva precio={22.222}/>
             <CuentaRender/>
             <Factorial/>
+            <FiltroAnimales/>
         </>
     )
 }
