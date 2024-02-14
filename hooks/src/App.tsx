@@ -1,12 +1,12 @@
-import {useState} from 'react'
 import './App.css'
+import Efectos from "./components/Efectos.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-
+    <Efectos/>
     </>
   )
 }
