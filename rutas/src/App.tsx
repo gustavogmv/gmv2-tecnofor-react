@@ -1,8 +1,12 @@
 import './App.css'
-import {Outlet} from "react-router-dom";
+import {Outlet, useMatch} from "react-router-dom";
 import NavBar from "./components/NavBar.tsx";
 
 function App() {
+
+    const match = useMatch('login')
+
+    if(match){console.log("In 'LOGIN' route")}
 
     return (
         <>

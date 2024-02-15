@@ -18,6 +18,7 @@ const NavBar = () => {
             <li><NavLink to={"/admin"} style={isActiveLink}>Admin Zone</NavLink></li>
             <li><NavLink to={"/admin/lists"} style={isActiveLink}>Admin Lists</NavLink></li>
             <li><NavLink to={"/register"} style={isActiveLink}>Register</NavLink></li>
+            <li><NavLink to={"/login"} style={isActiveLink}>Login</NavLink></li>
         </ul>
     </nav>
 }
