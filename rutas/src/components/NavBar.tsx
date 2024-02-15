@@ -1,4 +1,4 @@
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const isActiveLink = ({isActive}:{isActive:boolean}) => {
     return {color: isActive ? 'red' : 'black'}

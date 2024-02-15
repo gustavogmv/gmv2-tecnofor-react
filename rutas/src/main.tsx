@@ -13,6 +13,7 @@ import Contact from "./pages/Contact.tsx";
 import AuthLayout from "./pages/layout/AuthLayout.tsx";
 import Login from "./pages/auth/Login.tsx";
 import Register from "./pages/auth/Register.tsx";
+import EmployeesList from "./pages/admin/EmployeesList.tsx";
 
 /**
  * APP
@@ -37,7 +38,9 @@ const router = createBrowserRouter([
             {
                 path: 'admin', element: <AdminLayout/>,
                 children: [{path: 'graphics', element: <Graphics/>},
-                    {path: 'lists', element: <Lists/>}]
+                           {path: 'lists', element: <Lists/>},
+                           {path: 'employees/:employeeId', element: <EmployeesList/>}
+                ]
             },
             {
                 element: <AuthLayout/>,
