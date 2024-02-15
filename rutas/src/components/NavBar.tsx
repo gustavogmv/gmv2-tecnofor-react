@@ -1,5 +1,10 @@
 import {Link, NavLink} from "react-router-dom";
 
+const isActiveLink = ({isActive}:{isActive:boolean}) => {
+    return {color: isActive ? 'red' : 'black'}
+}
+
+
 const NavBar = () => {
     return <nav>
         <ul>
@@ -7,9 +12,7 @@ const NavBar = () => {
             {/*    <a href ....*/}
             {/*</li>*/} {/*----> NEVER, NEVER do this*/}
             <li><NavLink to={"/info"}
-                         style={({isActive}) => {
-                             return {color: isActive ? 'red' : 'black'}
-                         }}>Information</NavLink></li>
+                         style={isActiveLink}>Information</NavLink></li>
             <li><Link to={"/about"}>About Me</Link></li>
             <li><Link to={"/contact"}>Contact</Link></li>
             <li><Link to={"/admin"}>Admin Zone</Link></li>
