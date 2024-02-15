@@ -7,14 +7,23 @@ import PrecioIva from "./components/PrecioIva.tsx";
 import CuentaRender from "./components/CuentaRender.tsx";
 import Factorial from "./components/Factorial.tsx";
 import FiltroAnimales from "./components/FiltroAnimales.tsx";
+import useFetch from "./hooks/useFetch.ts";
 
 function App() {
     // const [count, setCount] = useState(0)
 
     const [showDate, setShowDate] = useState(true)
     const btnmsg = showDate ? 'Hide' : 'Show'
+    const data = useFetch('https://peticiones.online/api/products')
+    console.log(data)
     return (
         <>
+            {data && data.results.map((item: any) => (
+                <div key={item._id}>
+                    <h3>{item.name}</h3>
+                    <img src={item.image} alt=""/>
+                    </div>
+                ))}
             <button onClick={() => {
                 setShowDate(!showDate)
             }}>{btnmsg}</button>
