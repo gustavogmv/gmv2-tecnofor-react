@@ -13,11 +13,11 @@ const NavBar = () => {
             {/*</li>*/} {/*----> NEVER, NEVER do this*/}
             <li><NavLink to={"/info"}
                          style={isActiveLink}>Information</NavLink></li>
-            <li><Link to={"/about"}>About Me</Link></li>
-            <li><Link to={"/contact"}>Contact</Link></li>
-            <li><Link to={"/admin"}>Admin Zone</Link></li>
-            <li><Link to={"/admin/lists"}>Admin Lists</Link></li>
-            <li><Link to={"/register"}>Register</Link></li>
+            <li><NavLink to={"/about"} style={isActiveLink}>About Me</NavLink></li>
+            <li><NavLink to={"/contact"} style={isActiveLink}>Contact</NavLink></li>
+            <li><NavLink to={"/admin"} style={isActiveLink}>Admin Zone</NavLink></li>
+            <li><NavLink to={"/admin/lists"} style={isActiveLink}>Admin Lists</NavLink></li>
+            <li><NavLink to={"/register"} style={isActiveLink}>Register</NavLink></li>
         </ul>
     </nav>
 }
