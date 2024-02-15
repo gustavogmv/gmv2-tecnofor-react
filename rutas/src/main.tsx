@@ -38,8 +38,14 @@ const router = createBrowserRouter([
             {
                 path: 'admin', element: <AdminLayout/>,
                 children: [{path: 'graphics', element: <Graphics/>},
-                           {path: 'lists', element: <Lists/>},
-                           {path: 'employees/:employeeId', element: <EmployeesList/>}
+                    {path: 'lists', element: <Lists/>},
+                    {
+                        path: 'employees/:employeeId', element: <EmployeesList/>,
+                        // executes before load component
+                        loader: ({params}) => {
+                            return fetch(`https://peticiones.online/api/users/${params.employeeId}`)
+                        }
+                    }
                 ]
             },
             {
