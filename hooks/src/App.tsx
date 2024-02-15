@@ -14,7 +14,7 @@ function App() {
 
     const [showDate, setShowDate] = useState(true)
     const btnmsg = showDate ? 'Hide' : 'Show'
-    const data = useFetch('https://peticiones.online/api/products')
+    const data = useFetch('https://peticiones.online/api/products',1)
     console.log(data)
     return (
         <>
