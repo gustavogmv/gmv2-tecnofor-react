@@ -1,5 +1,5 @@
 const About = () => {
-    return <div>
+    return <div style={{backgroundColor:"lightcoral"}}>
         <p>About me!</p>
     </div>
 }

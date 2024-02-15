@@ -1,5 +1,5 @@
 const Info = () => {
-    return <div>
+    return <div style={{backgroundColor:"lightpink"}}>
         <p>Information page !</p>
     </div>
 }
