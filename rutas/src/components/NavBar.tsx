@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const isActiveLink = ({isActive}:{isActive:boolean}) => {
     return {color: isActive ? 'red' : 'black'}
@@ -6,9 +6,20 @@ const isActiveLink = ({isActive}:{isActive:boolean}) => {
 
 
 const NavBar = () => {
+    const navigate = useNavigate()
+
+    const handleClick = (path:string) => {
+        navigate(path)
+    }
+
     return <nav>
+        <div>
+            <button onClick={()=>{handleClick('/info')}}>Info</button>
+            <button onClick={()=>{handleClick('/about')}}>About me</button>
+            <button onClick={()=>{handleClick('/contact')}}>Contact</button>
+        </div>
         <ul>
-            {/*<li>*/}
+        {/*<li>*/}
             {/*    <a href ....*/}
             {/*</li>*/} {/*----> NEVER, NEVER do this*/}
             <li><NavLink to={"/info"}
