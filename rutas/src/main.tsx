@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, redirect, RouterProvider} from "react-router-dom";
 import ErrorPage from "./pages/Error.tsx";
 import AdminLayout from "./pages/layout/AdminLayout.tsx";
 import Graphics from "./pages/admin/Graphics.tsx";
@@ -42,8 +42,16 @@ const router = createBrowserRouter([
                     {
                         path: 'employees/:employeeId', element: <EmployeesList/>,
                         // executes before load component
-                        loader: ({params}) => {
-                            return fetch(`https://peticiones.online/api/users/${params.employeeId}`)
+                        loader: async ({params}) => {
+                            // direct call
+                            //fetch(`https://peticiones.online/api/users/${params.employeeId}`)
+                            // manage error...
+                            const response = await fetch(`https://peticiones.online/api/users/${params.employeeId}`)
+                            const data = await response.json()
+                            if(data.error){
+                                throw redirect('/login')
+                            }
+                            return data
                         }
                     }
                 ]
