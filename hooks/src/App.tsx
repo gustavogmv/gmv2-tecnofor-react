@@ -8,6 +8,7 @@ import CuentaRender from "./components/CuentaRender.tsx";
 import Factorial from "./components/Factorial.tsx";
 import FiltroAnimales from "./components/FiltroAnimales.tsx";
 import useFetch from "./hooks/useFetch.ts";
+import useGeolocation from "./hooks/useGeolocation.ts";
 
 function App() {
     // const [count, setCount] = useState(0)
@@ -16,7 +17,8 @@ function App() {
     const btnmsg = showDate ? 'Hide' : 'Show'
     const [page, setPage] = useState<number>(1)
     const data = useFetch('https://peticiones.online/api/products', page)
-    console.log(data)
+    const position = useGeolocation()
+    console.log(position)
     return (
         <>
             <div>
