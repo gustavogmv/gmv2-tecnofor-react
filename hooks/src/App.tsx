@@ -14,16 +14,22 @@ function App() {
 
     const [showDate, setShowDate] = useState(true)
     const btnmsg = showDate ? 'Hide' : 'Show'
-    const data = useFetch('https://peticiones.online/api/products',1)
+    const [page, setPage] = useState<number>(1)
+    const data = useFetch('https://peticiones.online/api/products', page)
     console.log(data)
     return (
         <>
+            <div>
+                <button onClick={()=>{setPage(page-1)}}>Prev</button>
+                <span>Page: {page}</span>
+                <button onClick={()=>{setPage(page+1)}}>Next</button>
+            </div>
             {data && data.results.map((item: any) => (
                 <div key={item._id}>
                     <h3>{item.name}</h3>
                     <img src={item.image} alt=""/>
-                    </div>
-                ))}
+                </div>
+            ))}
             <button onClick={() => {
                 setShowDate(!showDate)
             }}>{btnmsg}</button>
