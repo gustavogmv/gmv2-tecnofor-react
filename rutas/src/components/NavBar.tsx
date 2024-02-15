@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const NavBar = () => {
     return <nav>
@@ -6,7 +6,10 @@ const NavBar = () => {
             {/*<li>*/}
             {/*    <a href ....*/}
             {/*</li>*/} {/*----> NEVER, NEVER do this*/}
-            <li><Link to={"/info"}>Information</Link></li>
+            <li><NavLink to={"/info"}
+                         style={({isActive}) => {
+                             return {color: isActive ? 'red' : 'black'}
+                         }}>Information</NavLink></li>
             <li><Link to={"/about"}>About Me</Link></li>
             <li><Link to={"/contact"}>Contact</Link></li>
             <li><Link to={"/admin"}>Admin Zone</Link></li>
