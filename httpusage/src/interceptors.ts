@@ -4,7 +4,7 @@
 const {fetch: _fetch} = window
 
 window.fetch = async (...args) => {
-    let [resource, config = {}] = args
+    const [resource, config = {}] = args
 
     // add an 'authorization token' to every request
     config.headers = {...config.headers, 'Authorization': 'great-back-token'}
