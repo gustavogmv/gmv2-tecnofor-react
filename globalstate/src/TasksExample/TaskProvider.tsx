@@ -1,4 +1,4 @@
-import {createContext, ReactNode, useReducer} from "react";
+import {createContext, ReactNode, useContext, useReducer} from "react";
 import {v4 as uuidv4} from "uuid";
 
 interface Task {
@@ -30,6 +30,15 @@ const reducer = (state: State, action: Action) => {
 // create Contexts
 const TaskContext = createContext<State | null>(null)
 const DispatchContext = createContext<React.Dispatch<Action> | null>(null)
+
+export const useTaskContext = () => {
+    return useContext(TaskContext)
+}
+
+export const useDispatchContext = () => {
+    return useContext(DispatchContext)
+}
+
 
 const TaskProvider = ({children}: TaskProviderProps) => {
     const [tasks, dispatch] = useReducer(reducer, [])
