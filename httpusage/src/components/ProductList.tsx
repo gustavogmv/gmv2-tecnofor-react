@@ -7,10 +7,21 @@ import {Product} from "../interfaces/Product.ts";
 const ProductList = () => {
     const [products, setProducts] = useState<Array<Product>>([])
 
+    // useEffect(() => {
+    //     fetch(`https://peticiones.online/api/products`)
+    //         .then(response => response.json())
+    //         .then(data => setProducts(data.result))
+    // }, []);
+
     useEffect(() => {
-        fetch(`https://peticiones.online/api/products`)
-            .then(response => response.json())
-            .then(data => setProducts(data.result))
+        async function getData() {
+            const response = await fetch(`https://peticiones.online/api/products`)
+            const data = await response.json()
+            setProducts(data.results)
+        }
+
+        getData()
+
     }, []);
 
     return <div className="product-list">
