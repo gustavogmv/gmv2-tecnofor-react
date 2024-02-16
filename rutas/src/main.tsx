@@ -14,6 +14,7 @@ import AuthLayout from "./pages/layout/AuthLayout.tsx";
 import Login from "./pages/auth/Login.tsx";
 import Register from "./pages/auth/Register.tsx";
 import EmployeesList from "./pages/admin/EmployeesList.tsx";
+import ProtectedRoute from "./components/ProtectedRoute.tsx";
 
 /**
  * APP
@@ -34,7 +35,8 @@ const router = createBrowserRouter([
         children: [
             {path: 'info', element: <Info/>},
             {path: 'about', element: <About/>},
-            {path: 'contact', element: <Contact/>},
+            // Use ProtectedRoute for guarding 'contact' activation
+            {element: <ProtectedRoute isAllowed={true}/>, children: [{path: 'contact', element: <Contact/>}]},
             {
                 path: 'admin', element: <AdminLayout/>,
                 children: [{path: 'graphics', element: <Graphics/>},
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
                             // manage error...
                             const response = await fetch(`https://peticiones.online/api/users/${params.employeeId}`)
                             const data = await response.json()
-                            if(data.error){
+                            if (data.error) {
                                 throw redirect('/login')
                             }
                             return data
